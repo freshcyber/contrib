@@ -17,7 +17,7 @@ func TestCreateToken(t *testing.T) {
 	_claims := jwt.StandardClaims{
 		NotBefore: int64(time.Now().Unix() - 600),
 		ExpiresAt: _expire,
-		Issuer:    "unionpro",
+		Issuer:    "freshcyber.io",
 		IssuedAt:  time.Now().Unix(),
 	}
 
@@ -49,7 +49,7 @@ func TestRefresh(t *testing.T) {
 
 	_j := &JWT{[]byte("keyjwt")}
 
-	_token, err := _j.Refresh("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Njc3OTAzOTcsImlhdCI6MTU2Nzc4OTcyNSwiaXNzIjoidW5pb25wcm8iLCJuYmYiOjE1Njc3ODkxMjV9.pTUnTuxvFCd01hTK1YJWfkdk56D0iv0OAGknroNBVoc", "unionpro", 10)
+	_token, err := _j.Refresh("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODI1NTM5MDEsImlhdCI6MTU4MjU1MzMwMSwiaXNzIjoiZnJlc2hjeWJlci5pbyIsIm5iZiI6MTU4MjU1MjcwMX0.ZAIBLdf6sEbcLa6GICMalGULmif0H1UaqCb6luxPdqs", "freshcyber.io", 10)
 	if err != nil {
 		fmt.Println("err:", err.Error())
 		return
